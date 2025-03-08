@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,24 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".einstellungen.EinstellungenActivity">
 
-    <!-- FrameLayout als "Platzhalter" für die Activity -->
-    <FrameLayout
-        android:id="@+id/einstellungen_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!-- 
-        Erklärung von GH Copilot für Wert "0dp" für layout_width und "layout_height": 
-        When you set the width or height of a view to 0dp in a ConstraintLayout, 
-        it means that the size of the view will be determined by the constraints 
-        applied to it, rather than by a fixed size or by wrapping its content. 
-        This is often referred to as "match constraints." 
-        Essentially, the view will expand or contract to fill the available 
-        space as defined by its constraints.
-     -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- FrameLayout als "Platzhalter" für die Activity -->
+        <FrameLayout
+            android:id="@+id/einstellungen_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!--
+            Erklärung von GH Copilot für Wert "0dp" für layout_width und "layout_height":
+            When you set the width or height of a view to 0dp in a ConstraintLayout,
+            it means that the size of the view will be determined by the constraints
+            applied to it, rather than by a fixed size or by wrapping its content.
+            This is often referred to as "match constraints."
+            Essentially, the view will expand or contract to fill the available
+            space as defined by its constraints.
+         -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
