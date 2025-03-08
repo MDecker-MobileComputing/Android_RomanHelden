@@ -6,4 +6,7 @@
     <string name="actionbar_neuer_name">Neuer Name</string>
     <string name="actionbar_einstellungen">Einstellungen</string>
 
+    <string name="pref_zaehler_name">Anzahl erzeugte Namen</string>
+    <string name="pref_zaehler_beschreib">Gesamtzahl der bisher erzeugten Namen</string>
+
 </resources>

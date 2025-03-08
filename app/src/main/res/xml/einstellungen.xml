@@ -6,16 +6,10 @@
          https://developer.android.com/develop/ui/views/components/settings?hl=de
       -->
 
-    <EditTextPreference
-        android:key="example_text"
-        android:title="Example Text"
-        android:summary="An example text preference"
-        android:defaultValue="Default value" />
-
-    <CheckBoxPreference
-        android:key="example_checkbox"
-        android:title="Example Checkbox"
-        android:summary="An example checkbox preference"
-        android:defaultValue="false" />
+    <Preference
+        android:key="namen_zaehler"
+        android:title="@string/pref_zaehler_name"
+        android:summary="@string/pref_zaehler_beschreib"
+        android:defaultValue="0" />
 
 </PreferenceScreen>
