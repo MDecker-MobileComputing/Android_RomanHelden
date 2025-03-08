@@ -4,5 +4,6 @@
 
     <string name="name_beispiel">Maximilian\nMustermann</string>
     <string name="actionbar_neuer_name">Neuer Name</string>
+    <string name="actionbar_einstellungen">Einstellungen</string>
 
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Doku zu Einstellungen in Android:
+         https://developer.android.com/develop/ui/views/components/settings?hl=de
+      -->
+
+    <EditTextPreference
+        android:key="example_text"
+        android:title="Example Text"
+        android:summary="An example text preference"
+        android:defaultValue="Default value" />
+
+    <CheckBoxPreference
+        android:key="example_checkbox"
+        android:title="Example Checkbox"
+        android:summary="An example checkbox preference"
+        android:defaultValue="false" />
+
+</PreferenceScreen>

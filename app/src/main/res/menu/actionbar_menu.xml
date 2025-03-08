@@ -6,6 +6,11 @@
         android:id="@+id/action_neuername"
         android:icon="@drawable/baseline_refresh_24"
         android:title="@string/actionbar_neuer_name"
-        app:showAsAction="always|withText" />
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/action_einstellungen"
+        android:title="@string/actionbar_einstellungen"
+        app:showAsAction="never" />
 
 </menu>

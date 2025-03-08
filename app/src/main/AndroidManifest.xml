@@ -27,6 +27,11 @@
             </intent-filter>
 
         </activity>
+
+        <activity
+            android:name=".einstellungen.EinstellungenActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

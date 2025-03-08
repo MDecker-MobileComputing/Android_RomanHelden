@@ -1,33 +1,48 @@
 package de.eldecker.droid.romanhelden;
 
-import static de.eldecker.droid.romanhelden.NamenGenerator.erzeugeName;
+import static de.eldecker.droid.romanhelden.namenGenerator.NamenGenerator.erzeugeName;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import de.eldecker.droid.romanhelden.einstellungen.EinstellungenActivity;
+import de.eldecker.droid.romanhelden.namenGenerator.NameRecord;
 
+
+/**
+ * Haupt-Activity der App, zeigt die zufällig erzeugten Namen
+ * von Romanfiguren an.
+ */
 public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG4LOGGING = "RomanNamen";
 
     /** UI-Element zur Anzeige des erzeugten Namens. */
     private TextView _nameTextView = null;
 
-    /** Menu-Eintrag in ActionBar für Erzeugung neuer Name. */
+    /** Menü-Eintrag in ActionBar für Erzeugung neuer Name. */
     private MenuItem _neuNameMenuItem = null;
+
+    /** Menü-Eintrag in ActionBar für Anzeige Einstellungen. */
+    private MenuItem _einstellungenMenuItem = null;
 
 
     /**
-     * Lifecycle-Methode
+     * Lifecycle-Methode, wird beim Erzeugen der Activity für
+     * eine bestimmte Display-Ausrichtung aufgerufen.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView( R.layout.activity_main );
 
         _nameTextView = findViewById( R.id.name_textview );
     }
@@ -45,14 +60,17 @@ public class MainActivity extends AppCompatActivity {
         neuerName();
     }
 
+
     /**
      * Methode lässt neuen Namen erzeugen und bringt ihn zur Anzeige
      */
     private void neuerName() {
 
         NameRecord nameRecord = erzeugeName();
-        _nameTextView.setText( nameRecord.toString() );
+        String name = nameRecord.toString();
+        _nameTextView.setText( name );
     }
+
 
     /**
      * Menü für ActionBar einrichten (Icon und Overflow-Menü)
@@ -67,10 +85,12 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate( R.menu.actionbar_menu, menu );
 
-        _neuNameMenuItem = menu.findItem( R.id.action_neuername );
+        _neuNameMenuItem       = menu.findItem( R.id.action_neuername     );
+        _einstellungenMenuItem = menu.findItem( R.id.action_einstellungen );
 
         return super.onCreateOptionsMenu( menu );
     }
+
 
     /**
      * Event-Handler für Menu-Items in der ActionBar.
@@ -86,9 +106,15 @@ public class MainActivity extends AppCompatActivity {
 
         final int selectedMenuId = item.getItemId();
 
-        if ( selectedMenuId == item.getItemId() ) {
+        if ( selectedMenuId == _neuNameMenuItem.getItemId() ) {
 
             neuerName();
+            return true;
+
+        } else if ( selectedMenuId == _einstellungenMenuItem.getItemId() )  {
+
+            Intent intent = new Intent( this, EinstellungenActivity.class );
+            startActivity( intent );
             return true;
 
         } else {
