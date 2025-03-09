@@ -9,6 +9,12 @@
         app:showAsAction="ifRoom|withText" />
 
     <item
+        android:id="@+id/action_zwischenablage"
+        android:title="@string/actionbar_clipboard"
+        app:showAsAction="never" />
+    <!-- "never": Immer in Overflow-Menü anzeigen -->
+
+    <item
         android:id="@+id/action_einstellungen"
         android:title="@string/actionbar_einstellungen"
         app:showAsAction="never" />

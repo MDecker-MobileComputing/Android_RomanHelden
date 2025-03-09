@@ -4,6 +4,7 @@
 
     <string name="name_beispiel">Maximilian\nMustermann</string>
     <string name="actionbar_neuer_name">Neuer Name</string>
+    <string name="actionbar_clipboard">Ini Zwischenablage kopieren</string>
     <string name="actionbar_einstellungen">Einstellungen</string>
 
     <string name="pref_zaehler_name">Anzahl erzeugte Namen</string>

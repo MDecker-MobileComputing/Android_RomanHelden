@@ -2,6 +2,9 @@ package de.eldecker.droid.romanhelden;
 
 import static de.eldecker.droid.romanhelden.namenGenerator.NamenGenerator.erzeugeName;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,7 +25,7 @@ import de.eldecker.droid.romanhelden.namenGenerator.NameRecord;
  */
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG4LOGGING = "RomanNamen";
+    public static final String TAG4LOGGING = "RomandHelden";
 
     /** UI-Element zur Anzeige des erzeugten Namens. */
     private TextView _nameTextView = null;
@@ -32,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
     /** Menü-Eintrag in ActionBar für Anzeige Einstellungen. */
     private MenuItem _einstellungenMenuItem = null;
+
+    /** Menü-Eintrag in ActionBar für Kopieren Name in Zwischenablage. */
+    private MenuItem _zwischenablageMenuItem = null;
+
+    /** Aktuell angezeigter Name. */
+    private NameRecord _nameRecord = null;
 
 
     /**
@@ -66,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void neuerName() {
 
-        NameRecord nameRecord = erzeugeName();
-        String name = nameRecord.toString();
+        _nameRecord = erzeugeName();
+        String name = _nameRecord.toString();
         _nameTextView.setText( name );
     }
 
@@ -85,8 +94,9 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate( R.menu.actionbar_menu, menu );
 
-        _neuNameMenuItem       = menu.findItem( R.id.action_neuername     );
-        _einstellungenMenuItem = menu.findItem( R.id.action_einstellungen );
+        _neuNameMenuItem        = menu.findItem( R.id.action_neuername      );
+        _einstellungenMenuItem  = menu.findItem( R.id.action_einstellungen  );
+        _zwischenablageMenuItem = menu.findItem( R.id.action_zwischenablage );
 
         return super.onCreateOptionsMenu( menu );
     }
@@ -111,16 +121,46 @@ public class MainActivity extends AppCompatActivity {
             neuerName();
             return true;
 
-        } else if ( selectedMenuId == _einstellungenMenuItem.getItemId() )  {
+        } else if ( selectedMenuId == _einstellungenMenuItem.getItemId() ) {
 
-            Intent intent = new Intent( this, EinstellungenActivity.class );
-            startActivity( intent );
+            Intent intent = new Intent(this, EinstellungenActivity.class);
+            startActivity(intent);
+            return true;
+
+        } else if ( selectedMenuId == _zwischenablageMenuItem.getItemId() ) {
+
+            kopiereInZwischenablage();
             return true;
 
         } else {
 
             return super.onOptionsItemSelected(item);
         }
+    }
+
+
+    /**
+     * Aktuellen Namen in Zwischenablage kopieren.
+     */
+    private void kopiereInZwischenablage() {
+
+        ClipboardManager clipboard = (ClipboardManager)
+                                getSystemService( Context.CLIPBOARD_SERVICE );
+
+        if ( clipboard == null ) {
+
+            Toast.makeText( this,
+                            "Kann nicht auf Zwischenablage zugreifen.",
+                            Toast.LENGTH_LONG
+                          ).show();
+            return;
+        }
+
+        String name = _nameRecord.fuerZwischenablage();
+
+        ClipData clip = ClipData.newPlainText("Name", name );
+
+        clipboard.setPrimaryClip( clip );
     }
 
 }
