@@ -30,15 +30,6 @@ public class MainActivity extends AppCompatActivity {
     /** UI-Element zur Anzeige des erzeugten Namens. */
     private TextView _nameTextView = null;
 
-    /** Menü-Eintrag in ActionBar für Erzeugung neuer Name. */
-    private MenuItem _neuNameMenuItem = null;
-
-    /** Menü-Eintrag in ActionBar für Anzeige Einstellungen. */
-    private MenuItem _einstellungenMenuItem = null;
-
-    /** Menü-Eintrag in ActionBar für Kopieren Name in Zwischenablage. */
-    private MenuItem _zwischenablageMenuItem = null;
-
     /** Aktuell angezeigter Name. */
     private NameRecord _nameRecord = null;
 
@@ -94,10 +85,6 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate( R.menu.actionbar_menu, menu );
 
-        _neuNameMenuItem        = menu.findItem( R.id.action_neuername      );
-        _einstellungenMenuItem  = menu.findItem( R.id.action_einstellungen  );
-        _zwischenablageMenuItem = menu.findItem( R.id.action_zwischenablage );
-
         return super.onCreateOptionsMenu( menu );
     }
 
@@ -116,18 +103,18 @@ public class MainActivity extends AppCompatActivity {
 
         final int selectedMenuId = item.getItemId();
 
-        if ( selectedMenuId == _neuNameMenuItem.getItemId() ) {
+        if ( selectedMenuId == R.id.action_neuername ) {
 
             neuerName();
             return true;
 
-        } else if ( selectedMenuId == _einstellungenMenuItem.getItemId() ) {
+        } else if ( selectedMenuId == R.id.action_einstellungen ) {
 
             Intent intent = new Intent(this, EinstellungenActivity.class);
             startActivity(intent);
             return true;
 
-        } else if ( selectedMenuId == _zwischenablageMenuItem.getItemId() ) {
+        } else if ( selectedMenuId == R.id.action_zwischenablage) {
 
             kopiereInZwischenablage();
             return true;
