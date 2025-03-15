@@ -17,6 +17,7 @@
     <string name="genre_western">Western</string>
     <string name="genre_superhelden">Superhelden</string>
     <string name="genre_historisch">Historischer Roman</string>
+    <string name="genre_liebesroman">Liebesroman</string>
 
     <string name="ueber_dialog_titel">Über diese App</string>
     <string name="ueber_text">Diese App hat bereits %1$d Namen erzeugt.

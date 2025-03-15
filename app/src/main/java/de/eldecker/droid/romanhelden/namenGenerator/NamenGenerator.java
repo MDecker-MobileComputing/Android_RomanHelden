@@ -21,6 +21,9 @@ public class NamenGenerator {
     private static final String[] HISTORISCH_VORNAMEN  = { "Baptiste", "Eleanor", "Theodore", "Harriet", "Walter", "Beatrice", "Arthur", "Catherine", "Edmund", "Matilda", "Henry" };
     private static final String[] HISTORISCH_NACHNAMEN = { "Pendleton", "Montague", "Hastings", "Whitmore", "Fairchild", "Kingsley", "Barrow", "Lancaster", "Hawthorne", "Winchester" };
 
+    private static final String[] LIEBESROMAN_VORNAMEN = { "Amour", "Bella", "Luna", "Eterna", "Rose", "Felicity", "Serena", "Aurora", "Celeste", "Viola" };
+    private static final String[] LIEBSROMAN_NACHNAMEN = { "Heart", "Love", "Passion", "Bliss", "Euphoria", "Kiss", "Charm", "Desire", "Glow", "Heaven" };
+
     /** Array für Fehlerfall (wenn Genre nicht erkannt wird). */
     private static final String[] DUMMY_ARRAY = { "???" };
 
@@ -75,6 +78,11 @@ public class NamenGenerator {
             case HISTORISCH:
                     vornamenArray  = HISTORISCH_VORNAMEN;
                     nachnamenArray = HISTORISCH_NACHNAMEN;
+                break;
+
+            case LIEBESROMAN:
+                    vornamenArray  = LIEBESROMAN_VORNAMEN;
+                    nachnamenArray = LIEBSROMAN_NACHNAMEN;
                 break;
 
             default:

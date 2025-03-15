@@ -6,6 +6,7 @@
         <item>@string/genre_western</item>
         <item>@string/genre_superhelden</item>
         <item>@string/genre_historisch</item>
+        <item>@string/genre_liebesroman</item>
     </string-array>
 
     <string-array name="literatur_genres_techwerte">
@@ -13,6 +14,7 @@
         <item>WESTERN</item>
         <item>SUPERHELDEN</item>
         <item>HISTORISCH</item>
+        <item>LIEBESROMAN</item>
     </string-array>
 
 </resources>

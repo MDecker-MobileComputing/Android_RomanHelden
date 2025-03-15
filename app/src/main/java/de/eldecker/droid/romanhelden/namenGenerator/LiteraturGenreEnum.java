@@ -6,5 +6,6 @@ public enum LiteraturGenreEnum {
     KINDERBUCH,
     WESTERN,
     SUPERHELDEN,
-    HISTORISCH
+    HISTORISCH,
+    LIEBESROMAN
 }
