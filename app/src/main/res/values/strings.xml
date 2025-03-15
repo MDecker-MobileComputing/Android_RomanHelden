@@ -28,4 +28,6 @@
     <string name="toast_zwischenablage_fehler">Kann nicht auf Zwischenablage zugreifen</string>
     <string name="clipboard_label">Name Romanfigur</string>
 
+    <string name="actionbar_subtitel_genre">Genre: %1s</string>
+
 </resources>

@@ -15,8 +15,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 
 import de.eldecker.droid.romanhelden.einstellungen.EinstellungenActivity;
@@ -61,13 +64,72 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
+     * Lifecycle-Methode; wird aufgerufen, wenn Activity neu zur Anzeige gebracht wird.
+     */
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+
+        ActionBar actionBar = getSupportActionBar();
+        if ( actionBar != null ) {
+
+            String genreString = getGenreAnzeigeName();
+
+            String untertitel = getString( R.string.actionbar_subtitel_genre, genreString );
+            actionBar.setSubtitle( untertitel );
+        }
+    }
+
+    /**
+     * Gibt Anzeigename für aktuell gewähltes Genre laut Preferences
+     *
+     * @return Anzeigename Literaturgenre, z.B. "Western"
+     */
+    private String getGenreAnzeigeName() {
+
+        LiteraturGenreEnum genreEnum = getGenreAusPreferences();
+
+        String[] techwerteArray = getResources().getStringArray( R.array.literatur_genres_techwerte );
+
+        int index = -1;
+        for ( int i = 0; i < techwerteArray.length; i++ ) {
+
+            if ( techwerteArray[i].equals( genreEnum.toString() ) ) {
+
+                index = i;
+                break;
+            }
+        }
+
+        if ( index == -1 ) {
+
+            return "???";
+        }
+
+        String[] anzeigeArray = getResources().getStringArray( R.array.literatur_genres_anzeigenamen );
+        return anzeigeArray[ index ];
+    }
+
+    /**
+     * Aktuelles Genre aus Preferences auslesen.
+     *
+     * @return Aktuelles Literaturgenre, für das Namen erzeugt werden sollen.
+     */
+    private LiteraturGenreEnum getGenreAusPreferences() {
+
+        String genreTechWert = _sharedPreferences.getString( "literatur_genre", "KINDERBUCH" );
+
+        return LiteraturGenreEnum.valueOf( genreTechWert );
+    }
+
+
+    /**
      * Methode lässt neuen Namen erzeugen und bringt ihn zur Anzeige
      */
     private void neuerName() {
 
-        String genreTechWert = _sharedPreferences.getString( "literatur_genre", "KINDERBUCH" );
-
-        LiteraturGenreEnum genreEnum = LiteraturGenreEnum.valueOf( genreTechWert );
+        LiteraturGenreEnum genreEnum = getGenreAusPreferences();
 
         _nameRecord = erzeugeName( genreEnum );
         String name = _nameRecord.toString();
