@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
             String untertitel = getString( R.string.actionbar_subtitel_genre, genreString );
             actionBar.setSubtitle( untertitel );
         }
+
+        int schriftgroesse = _sharedPreferences.getInt("schriftgroesse_name", 40 );
+        _nameTextView.setTextSize( schriftgroesse );
     }
 
 

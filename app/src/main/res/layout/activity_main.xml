@@ -27,6 +27,7 @@
         android:layout_margin="5dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <!-- FontSize für TextView mit erzeugtem Namen wird programmatisch anhand Preference gesetzt -->
         <TextView
             android:id="@+id/name_textview"
             android:layout_width="match_parent"
@@ -34,14 +35,10 @@
             android:text="@string/name_beispiel"
             android:textStyle="bold"
             android:gravity="center_horizontal|center_vertical"
-            android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <!--
-          https://developer.android.com/develop/ui/views/text-and-emoji/autosizing-textview
-        -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

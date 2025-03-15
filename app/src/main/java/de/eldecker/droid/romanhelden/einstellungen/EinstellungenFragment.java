@@ -4,9 +4,11 @@ import android.os.Bundle;
 
 import androidx.preference.ListPreference;
 
+import androidx.preference.Preference;
 import androidx.preference.Preference.SummaryProvider;
 import androidx.preference.ListPreference.SimpleSummaryProvider;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SeekBarPreference;
 
 import de.eldecker.droid.romanhelden.R;
 
@@ -31,6 +33,22 @@ public class EinstellungenFragment extends PreferenceFragmentCompat {
 
             SummaryProvider simpleSummaryProvider = SimpleSummaryProvider.getInstance();
             genrePreference.setSummaryProvider( simpleSummaryProvider );
+        }
+
+
+        SeekBarPreference seekBarPreference = findPreference("schriftgroesse_name");
+        if ( seekBarPreference != null ) {
+
+            seekBarPreference.setSummary ( seekBarPreference.getValue() + "" );
+
+            seekBarPreference.setOnPreferenceChangeListener( new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange( Preference preference, Object neuerWert ) {
+
+                    preference.setSummary( neuerWert + "" );
+                    return true;
+                }
+            });
         }
     }
 

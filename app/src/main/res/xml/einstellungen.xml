@@ -20,6 +20,14 @@
         android:summary=""
         android:defaultValue="true" />
 
+    <SeekBarPreference
+        android:key="schriftgroesse_name"
+        android:title="Schriftgröße"
+        android:summary="Schriftgröße für den erzeugten Namen"
+        android:defaultValue="40"
+        android:min="25"
+        android:max="100" />
+
     <!--
          Es gibt noch die Hidden Preference "namen_zaehler", die programmatisch
          geschrieben und gelesen wird, aber auf dem Preferences-Screen nicht
