@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         if ( clipboard == null ) {
 
             Toast.makeText( this,
-                            "Kann nicht auf Zwischenablage zugreifen.",
+                            R.string.toast_zwischenablage_fehler,
                             Toast.LENGTH_LONG
                           ).show();
             return;
@@ -171,7 +171,8 @@ public class MainActivity extends AppCompatActivity {
 
         String name = _nameRecord.fuerZwischenablage();
 
-        ClipData clip = ClipData.newPlainText("Name", name );
+        String clipboardLabel = getString( R.string.clipboard_label );
+        ClipData clip = ClipData.newPlainText(clipboardLabel, name );
 
         clipboard.setPrimaryClip( clip );
     }
@@ -179,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Dialog "Über diese App" anzeigen, u.a. mit Anzahl der bereits erzeugten
-     * Namen.
+     * Namen und der Version.
      */
     private void aboutDialogAnzeigen() {
 

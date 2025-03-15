@@ -25,4 +25,7 @@
     </string>
     <string name="ueber_dialog_button">Zur Kenntnis genommen</string>
 
+    <string name="toast_zwischenablage_fehler">Kann nicht auf Zwischenablage zugreifen</string>
+    <string name="clipboard_label">Name Romanfigur</string>
+
 </resources>
