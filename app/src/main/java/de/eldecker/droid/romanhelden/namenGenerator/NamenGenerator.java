@@ -24,6 +24,10 @@ public class NamenGenerator {
     private static final String[] LIEBESROMAN_VORNAMEN = { "Amour", "Bella", "Luna", "Eterna", "Rose", "Felicity", "Serena", "Aurora", "Celeste", "Viola" };
     private static final String[] LIEBSROMAN_NACHNAMEN = { "Heart", "Love", "Passion", "Bliss", "Euphoria", "Kiss", "Charm", "Desire", "Glow", "Heaven" };
 
+    private static final String[] SCIENCEFICTION_VORNAMEN = { "Nova", "Zane", "Orion", "Lyra", "Kai", "Vega", "Axel", "Luna", "Juno", "Kara" };    
+    private static final String[] SCIENCEFICTION_NACHNAMEN = { "Stellar", "Quasar", "Lightyear", "Nebula", "Cosmos", "Eclipse", "Photon", "Astro", "Pulsar", "Vortex", "Zenith" };
+
+
     /** Array für Fehlerfall (wenn Genre nicht erkannt wird). */
     private static final String[] DUMMY_ARRAY = { "???" };
 
@@ -46,6 +50,7 @@ public class NamenGenerator {
         return namenArray[ idx ];
     }
 
+    
     /**
      * Neuen Namen für Romanfigur erzeugen.
      *
@@ -83,6 +88,11 @@ public class NamenGenerator {
             case LIEBESROMAN:
                     vornamenArray  = LIEBESROMAN_VORNAMEN;
                     nachnamenArray = LIEBSROMAN_NACHNAMEN;
+                break;
+
+            case SCIENCEFICTION:
+                    vornamenArray  = SCIENCEFICTION_VORNAMEN;
+                    nachnamenArray = SCIENCEFICTION_NACHNAMEN;
                 break;
 
             default:

@@ -7,6 +7,7 @@
         <item>@string/genre_superhelden</item>
         <item>@string/genre_historisch</item>
         <item>@string/genre_liebesroman</item>
+        <item>@string/genre_scifi</item>
     </string-array>
 
     <string-array name="literatur_genres_techwerte">
@@ -15,6 +16,7 @@
         <item>SUPERHELDEN</item>
         <item>HISTORISCH</item>
         <item>LIEBESROMAN</item>
+        <item>SCIENCEFICTION</item>
     </string-array>
 
 </resources>

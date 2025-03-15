@@ -7,5 +7,6 @@ public enum LiteraturGenreEnum {
     WESTERN,
     SUPERHELDEN,
     HISTORISCH,
-    LIEBESROMAN
+    LIEBESROMAN,
+    SCIENCEFICTION
 }
