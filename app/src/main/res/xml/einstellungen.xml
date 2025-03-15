@@ -9,7 +9,10 @@
     <Preference
         android:key="namen_zaehler"
         android:title="@string/pref_zaehler_name"
-        android:summary="@string/pref_zaehler_beschreib"
+        android:summary="0"
         android:defaultValue="0" />
+
+    <!-- Für "Hidden Preference" (die nicht auf Preferences Key angezeigt wird)
+         einfach Wert unter einem Key setzen, der hier nicht referenziert wird. -->
 
 </PreferenceScreen>

@@ -1,6 +1,6 @@
 package de.eldecker.droid.romanhelden.einstellungen;
 
-import  de.eldecker.droid.romanhelden.R;
+import de.eldecker.droid.romanhelden.R;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -24,6 +24,7 @@ public class EinstellungenActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         if ( actionBar != null ) {
+
             actionBar.setDisplayHomeAsUpEnabled( true );
             actionBar.setHomeAsUpIndicator( R.drawable.baseline_arrow_back_24 ); // Optional: set a custom back icon
         }

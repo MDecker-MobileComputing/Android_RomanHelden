@@ -6,7 +6,9 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import de.eldecker.droid.romanhelden.einstellungen.EinstellungenActivity;
 import de.eldecker.droid.romanhelden.namenGenerator.NameRecord;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     /** Aktuell angezeigter Name. */
     private NameRecord _nameRecord = null;
 
+    private SharedPreferences _sharedPreferences = null;
+
 
     /**
      * Lifecycle-Methode, wird beim Erzeugen der Activity für
@@ -45,17 +50,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView( R.layout.activity_main );
 
         _nameTextView = findViewById( R.id.name_textview );
-    }
 
-
-    /**
-     * Lifecycle, die bei Neu-Anzeige der Activity aufgerufen
-     * wird. Holt einen neuen Namen und zeigt diesen an.
-     */
-    @Override
-    protected void onStart() {
-
-        super.onStart();
+        _sharedPreferences = PreferenceManager.getDefaultSharedPreferences( this );
 
         neuerName();
     }
@@ -69,6 +65,24 @@ public class MainActivity extends AppCompatActivity {
         _nameRecord = erzeugeName();
         String name = _nameRecord.toString();
         _nameTextView.setText( name );
+
+        namenZaehlerErhoehen();
+    }
+
+
+    /**
+     * Zähler für Namen-Erzeugungen in SharedPreferences um 1 erhöhen.
+     */
+    private void namenZaehlerErhoehen() {
+
+        int zaehler = _sharedPreferences.getInt( "namen_zaehler", 0 );
+        zaehler++;
+        SharedPreferences.Editor editor = _sharedPreferences.edit();
+
+        editor.putInt( "namen_zaehler", zaehler );
+        editor.apply(); // Änderung committen
+
+        Log.i( TAG4LOGGING, "Gesamtanzahl erzeugter Namen: " + zaehler );
     }
 
 
@@ -110,18 +124,18 @@ public class MainActivity extends AppCompatActivity {
 
         } else if ( selectedMenuId == R.id.action_einstellungen ) {
 
-            Intent intent = new Intent(this, EinstellungenActivity.class);
-            startActivity(intent);
+            Intent intent = new Intent( this, EinstellungenActivity.class );
+            startActivity( intent );
             return true;
 
-        } else if ( selectedMenuId == R.id.action_zwischenablage) {
+        } else if ( selectedMenuId == R.id.action_zwischenablage ) {
 
             kopiereInZwischenablage();
             return true;
 
         } else {
 
-            return super.onOptionsItemSelected(item);
+            return super.onOptionsItemSelected( item );
         }
     }
 
