@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Zähler für Namen-Erzeugungen in SharedPreferences um 1 erhöhen.
+     * Zähler für Anzahl der erzeugten Namen in SharedPreferences um 1 erhöhen.
      */
     private void namenZaehlerErhoehen() {
 

@@ -38,14 +38,14 @@ public class EinstellungenActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected( MenuItem item ) {
 
-        if (item.getItemId() == android.R.id.home) {
-            // Handle the back button click
-            onBackPressed();
+        if ( item.getItemId() == android.R.id.home ) {
+            
+            getOnBackPressedDispatcher().onBackPressed(); 
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected( item );
     }
     
 }

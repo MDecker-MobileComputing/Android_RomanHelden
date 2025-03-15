@@ -14,7 +14,10 @@
         android:entries="@array/literatur_genres_anzeigenamen"
         android:entryValues="@array/literatur_genres_techwerte" />
 
-    <!-- Für "Hidden Preference" (die nicht auf Preferences Key angezeigt wird)
-         einfach Wert unter einem Key setzen, der hier nicht referenziert wird. -->
+    <!--
+         Es gibt noch die Hidden Preference "namen_zaehler", die programmatisch
+         geschrieben und gelesen wird, aber auf dem Preferences-Screen nicht
+         angezeigt wird.
+     -->
 
 </PreferenceScreen>
