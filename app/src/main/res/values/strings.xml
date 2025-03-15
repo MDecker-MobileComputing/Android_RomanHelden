@@ -3,9 +3,11 @@
     <string name="app_name">Roman-Helden</string>
 
     <string name="name_beispiel">Maximilian\nMustermann</string>
+
     <string name="actionbar_neuer_name">Neuer Name</string>
     <string name="actionbar_clipboard">Ini Zwischenablage kopieren</string>
     <string name="actionbar_einstellungen">Einstellungen</string>
+    <string name="actionbar_ueber">Über diese App</string>
 
     <string name="pref_literature_genre_title">Literatur-Genre</string>
     <string name="pref_literature_genre_summary">Genre für das Namen erzeugt werden sollen</string>
@@ -15,5 +17,11 @@
     <string name="genre_kinderbuch">Kinderbuch</string>
     <string name="genre_western">Western</string>
     <string name="genre_superhelden">Superhelden</string>
+
+    <string name="ueber_dialog_titel">Über diese App</string>
+    <string name="ueber_text">Diese App hat bereits %1$d Namen erzeugt.
+        \n\nVersion %2$s
+    </string>
+    <string name="ueber_dialog_button">Zur Kenntnis genommen</string>
 
 </resources>

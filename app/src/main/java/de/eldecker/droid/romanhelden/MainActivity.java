@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
@@ -139,6 +140,11 @@ public class MainActivity extends AppCompatActivity {
             kopiereInZwischenablage();
             return true;
 
+        } else if ( selectedMenuId == R.id.action_ueber ) {
+
+            aboutDialogAnzeigen();
+            return true;
+
         } else {
 
             return super.onOptionsItemSelected( item );
@@ -168,6 +174,31 @@ public class MainActivity extends AppCompatActivity {
         ClipData clip = ClipData.newPlainText("Name", name );
 
         clipboard.setPrimaryClip( clip );
+    }
+
+
+    /**
+     * Dialog "Über diese App" anzeigen, u.a. mit Anzahl der bereits erzeugten
+     * Namen.
+     */
+    private void aboutDialogAnzeigen() {
+
+        String versionName = BuildConfig.VERSION_NAME;
+        int zaehler = _sharedPreferences.getInt( "namen_zaehler", 0 );
+
+        String ueberText =
+                getString( R.string.ueber_text,
+                           zaehler,
+                           versionName );
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder( this );
+        dialogBuilder.setTitle( R.string.ueber_dialog_titel );
+        dialogBuilder.setMessage( ueberText );
+
+        dialogBuilder.setPositiveButton( R.string.ueber_dialog_button, null );
+
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
     }
 
 }

@@ -6,6 +6,10 @@ android {
     namespace 'de.eldecker.droid.romanhelden'
     compileSdk 35
 
+    // damit über Klasse BuildConfig auf versionCode und VersionName zugegriffen werden kann;
+    // danach einen Rebuild ausführen.
+    android.buildFeatures.buildConfig true
+
     defaultConfig {
         applicationId "de.eldecker.droid.romanhelden"
         minSdk 26

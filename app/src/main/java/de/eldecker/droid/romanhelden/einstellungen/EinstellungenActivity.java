@@ -26,7 +26,7 @@ public class EinstellungenActivity extends AppCompatActivity {
         if ( actionBar != null ) {
 
             actionBar.setDisplayHomeAsUpEnabled( true );
-            actionBar.setHomeAsUpIndicator( R.drawable.baseline_arrow_back_24 ); // Optional: set a custom back icon
+            actionBar.setHomeAsUpIndicator( R.drawable.baseline_arrow_back_24 );
         }
 
         EinstellungenFragment einstellFragment = new EinstellungenFragment();
@@ -37,6 +37,13 @@ public class EinstellungenActivity extends AppCompatActivity {
                 .commit();
     }
 
+    /**
+     * Event-Handler für Back-Button.
+     *
+     * @param item Menü-Eintrag, der Event ausgelöst hat
+     *
+     * @return Event wurde behandelt
+     */
     @Override
     public boolean onOptionsItemSelected( MenuItem item ) {
 
@@ -45,6 +52,7 @@ public class EinstellungenActivity extends AppCompatActivity {
             getOnBackPressedDispatcher().onBackPressed(); 
             return true;
         }
+
         return super.onOptionsItemSelected( item );
     }
     
