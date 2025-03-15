@@ -6,28 +6,35 @@
          https://developer.android.com/develop/ui/views/components/settings?hl=de
       -->
 
-    <ListPreference
-        android:key="literatur_genre"
-        android:title="@string/pref_literature_genre_title"
-        android:summary="@string/pref_literature_genre_summary"
-        android:defaultValue="KINDERBUCH"
-        android:entries="@array/literatur_genres_anzeigenamen"
-        android:entryValues="@array/literatur_genres_techwerte" />
+    <PreferenceCategory android:title="@string/pref_kategorie_generator">
 
-    <SwitchPreferenceCompat
-        android:key="animation_aktiv"
-        android:title="@string/pref_enable_animation_title"
-        android:summary=""
-        android:defaultValue="true" />
+        <ListPreference
+            android:key="literatur_genre"
+            android:title="@string/pref_literature_genre_title"
+            android:summary="@string/pref_literature_genre_summary"
+            android:defaultValue="KINDERBUCH"
+            android:entries="@array/literatur_genres_anzeigenamen"
+            android:entryValues="@array/literatur_genres_techwerte" />
 
-    <SeekBarPreference
-        android:key="schriftgroesse_name"
-        android:title="Schriftgröße"
-        android:summary="Schriftgröße für den erzeugten Namen"
-        android:defaultValue="40"
-        android:min="25"
-        android:max="100" />
+    </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/pref_kategorie_visuell">
+
+        <SwitchPreferenceCompat
+            android:key="animation_aktiv"
+            android:title="@string/pref_enable_animation_title"
+            android:summary=""
+            android:defaultValue="true" />
+
+        <SeekBarPreference
+            android:key="schriftgroesse_name"
+            android:title="Schriftgröße"
+            android:summary="Schriftgröße für den erzeugten Namen"
+            android:defaultValue="40"
+            android:min="25"
+            android:max="100" />
+
+    </PreferenceCategory>
     <!--
          Es gibt noch die Hidden Preference "namen_zaehler", die programmatisch
          geschrieben und gelesen wird, aber auf dem Preferences-Screen nicht

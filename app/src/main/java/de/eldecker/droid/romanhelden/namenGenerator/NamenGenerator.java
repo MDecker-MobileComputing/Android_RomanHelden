@@ -50,7 +50,7 @@ public class NamenGenerator {
         return namenArray[ idx ];
     }
 
-    
+
     /**
      * Neuen Namen für Romanfigur erzeugen.
      *
