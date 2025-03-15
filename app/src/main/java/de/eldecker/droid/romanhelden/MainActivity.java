@@ -18,8 +18,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
+import androidx.core.view.MenuCompat;
 import androidx.preference.PreferenceManager;
 
 import de.eldecker.droid.romanhelden.einstellungen.EinstellungenActivity;
@@ -81,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     /**
      * Gibt Anzeigename für aktuell gewähltes Genre laut Preferences
      *
@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         String[] anzeigeArray = getResources().getStringArray( R.array.literatur_genres_anzeigenamen );
         return anzeigeArray[ index ];
     }
+
 
     /**
      * Aktuelles Genre aus Preferences auslesen.
@@ -167,6 +168,8 @@ public class MainActivity extends AppCompatActivity {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate( R.menu.actionbar_menu, menu );
+
+        MenuCompat.setGroupDividerEnabled( menu, true );
 
         return super.onCreateOptionsMenu( menu );
     }

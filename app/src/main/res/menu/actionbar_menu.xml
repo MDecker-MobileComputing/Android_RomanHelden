@@ -2,26 +2,37 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_neuername"
-        android:icon="@drawable/baseline_refresh_24"
-        android:title="@string/actionbar_neuer_name"
-        app:showAsAction="ifRoom|withText" />
+    <!--
+         group für Trennlinie, muss noch mit MenuCompat.setGroupDividerEnabled(menu, true)
+         aktiviert werden.
+    -->
 
-    <item
-        android:id="@+id/action_zwischenablage"
-        android:title="@string/actionbar_clipboard"
-        app:showAsAction="never" />
-    <!-- "never": Immer in Overflow-Menü anzeigen -->
+    <group android:id="@+id/overflowmenu_funktionen">
 
-    <item
-        android:id="@+id/action_einstellungen"
-        android:title="@string/actionbar_einstellungen"
-        app:showAsAction="never" />
+        <item
+            android:id="@+id/action_neuername"
+            android:icon="@drawable/baseline_refresh_24"
+            android:title="@string/actionbar_neuer_name"
+            app:showAsAction="ifRoom|withText" />
 
-    <item
-        android:id="@+id/action_ueber"
-        android:title="@string/actionbar_ueber"
-        app:showAsAction="never" />
+        <item
+            android:id="@+id/action_zwischenablage"
+            android:title="@string/actionbar_clipboard"
+            app:showAsAction="never" />
+        <!-- "never": Immer in Overflow-Menü anzeigen -->
+
+    </group>
+
+    <group android:id="@+id/overflowmenu_info">
+        <item
+            android:id="@+id/action_einstellungen"
+            android:title="@string/actionbar_einstellungen"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_ueber"
+            android:title="@string/actionbar_ueber"
+            app:showAsAction="never" />
+    </group>
 
 </menu>
