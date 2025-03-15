@@ -2,15 +2,12 @@ package de.eldecker.droid.romanhelden;
 
 import static de.eldecker.droid.romanhelden.namenGenerator.NamenGenerator.erzeugeName;
 
-import de.eldecker.droid.romanhelden.namenGenerator.LiteraturGenreEnum;
-
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,9 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 
 import de.eldecker.droid.romanhelden.einstellungen.EinstellungenActivity;
+import de.eldecker.droid.romanhelden.namenGenerator.LiteraturGenreEnum;
 import de.eldecker.droid.romanhelden.namenGenerator.NameRecord;
 
 
@@ -39,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     /** Aktuell angezeigter Name. */
     private NameRecord _nameRecord = null;
 
+    /** Objekt für Zugriff auf Einstellungen. */
     private SharedPreferences _sharedPreferences = null;
 
 

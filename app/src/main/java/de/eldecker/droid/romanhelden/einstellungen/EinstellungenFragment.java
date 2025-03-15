@@ -1,12 +1,10 @@
 package de.eldecker.droid.romanhelden.einstellungen;
 
-import  de.eldecker.droid.romanhelden.R;
-
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+
+import de.eldecker.droid.romanhelden.R;
 
 
 /**
@@ -14,7 +12,6 @@ import androidx.preference.PreferenceFragmentCompat;
  * <a href="https://developer.android.com/develop/ui/views/components/settings?hl=de">diese Seite</a>
  */
 public class EinstellungenFragment extends PreferenceFragmentCompat {
-
 
     /**
      * Konfiguration für Preferences-Screen laden.
