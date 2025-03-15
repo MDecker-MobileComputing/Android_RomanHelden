@@ -5,5 +5,6 @@ public enum LiteraturGenreEnum {
 
     KINDERBUCH,
     WESTERN,
-    SUPERHELDEN
+    SUPERHELDEN,
+    HISTORISCH
 }

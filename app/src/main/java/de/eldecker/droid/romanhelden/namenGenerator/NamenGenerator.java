@@ -18,6 +18,9 @@ public class NamenGenerator {
     private static final String[] SUPERHELDEN_VORNAMEN  = { "Captain", "Mighty", "Shadow", "Iron", "Thunder", "Crimson", "Silver", "Dark", "Eternal", "Phoenix" };
     private static final String[] SUPERHELDEN_NACHNAMEN = { "Justice", "Power", "Strike", "Wing", "Force", "Blaze", "Shield", "Flare", "Bolt", "Vision" };
 
+    private static final String[] HISTORISCH_VORNAMEN  = { "Baptiste", "Eleanor", "Theodore", "Harriet", "Walter", "Beatrice", "Arthur", "Catherine", "Edmund", "Matilda", "Henry" };
+    private static final String[] HISTORISCH_NACHNAMEN = { "Pendleton", "Montague", "Hastings", "Whitmore", "Fairchild", "Kingsley", "Barrow", "Lancaster", "Hawthorne", "Winchester" };
+
     /** Array für Fehlerfall (wenn Genre nicht erkannt wird). */
     private static final String[] DUMMY_ARRAY = { "???" };
 
@@ -55,18 +58,23 @@ public class NamenGenerator {
         switch ( genre ) {
 
             case KINDERBUCH :
-                vornamenArray  = KINDERBUCH_VORNAMEN;
-                nachnamenArray = KINDERBUCH_NACHNAMEN;
+                    vornamenArray  = KINDERBUCH_VORNAMEN;
+                    nachnamenArray = KINDERBUCH_NACHNAMEN;
                 break;
 
             case WESTERN:
-                vornamenArray  = WESTERN_VORNAMEN;
-                nachnamenArray = WESTERN_NACHNAME;
+                    vornamenArray  = WESTERN_VORNAMEN;
+                    nachnamenArray = WESTERN_NACHNAME;
                 break;
 
             case SUPERHELDEN:
-                vornamenArray  = SUPERHELDEN_VORNAMEN;
-                nachnamenArray = SUPERHELDEN_NACHNAMEN;
+                    vornamenArray  = SUPERHELDEN_VORNAMEN;
+                    nachnamenArray = SUPERHELDEN_NACHNAMEN;
+                break;
+
+            case HISTORISCH:
+                    vornamenArray  = HISTORISCH_VORNAMEN;
+                    nachnamenArray = HISTORISCH_NACHNAMEN;
                 break;
 
             default:
