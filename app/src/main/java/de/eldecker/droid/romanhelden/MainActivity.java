@@ -7,11 +7,14 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -135,8 +138,22 @@ public class MainActivity extends AppCompatActivity {
         _nameRecord = erzeugeName( genreEnum );
         String name = _nameRecord.toString();
         _nameTextView.setText( name );
+        starteAnimation();
 
         namenZaehlerErhoehen();
+    }
+
+
+    /**
+     * Tween-Animation auf (neu erzeugten) Namen anwenden.
+     */
+    private void starteAnimation() {
+
+        Animation tweenAnimation =
+                AnimationUtils.loadAnimation( this,
+                                              R.anim.tween_animation );
+
+        _nameTextView.startAnimation( tweenAnimation );
     }
 
 
