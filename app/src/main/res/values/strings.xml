@@ -7,6 +7,13 @@
     <string name="actionbar_clipboard">Ini Zwischenablage kopieren</string>
     <string name="actionbar_einstellungen">Einstellungen</string>
 
+    <string name="pref_literature_genre_title">Literatur-Genre</string>
+    <string name="pref_literature_genre_summary">Genre für das Namen erzeugt werden sollen</string>
+
     <string name="pref_zaehler_name">Anzahl erzeugte Namen</string>
+
+    <string name="genre_kinderbuch">Kinderbuch</string>
+    <string name="genre_western">Western</string>
+    <string name="genre_superhelden">Superhelden</string>
 
 </resources>

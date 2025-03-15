@@ -2,12 +2,15 @@ package de.eldecker.droid.romanhelden;
 
 import static de.eldecker.droid.romanhelden.namenGenerator.NamenGenerator.erzeugeName;
 
+import de.eldecker.droid.romanhelden.namenGenerator.LiteraturGenreEnum;
+
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceManager;
+import android.content.SharedPreferences;
 
 import de.eldecker.droid.romanhelden.einstellungen.EinstellungenActivity;
 import de.eldecker.droid.romanhelden.namenGenerator.NameRecord;
@@ -62,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
      */
     private void neuerName() {
 
-        _nameRecord = erzeugeName();
+        String genreTechWert = _sharedPreferences.getString( "literatur_genre", "KINDERBUCH" );
+
+        LiteraturGenreEnum genreEnum = LiteraturGenreEnum.valueOf( genreTechWert );
+
+        _nameRecord = erzeugeName( genreEnum );
         String name = _nameRecord.toString();
         _nameTextView.setText( name );
 
@@ -113,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
      *          der Wert der Super-Methode.
      */
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected( MenuItem item ) {
 
         final int selectedMenuId = item.getItemId();
 

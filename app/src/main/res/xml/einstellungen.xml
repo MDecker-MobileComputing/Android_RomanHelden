@@ -6,11 +6,13 @@
          https://developer.android.com/develop/ui/views/components/settings?hl=de
       -->
 
-    <Preference
-        android:key="namen_zaehler"
-        android:title="@string/pref_zaehler_name"
-        android:summary="0"
-        android:defaultValue="0" />
+    <ListPreference
+        android:key="literatur_genre"
+        android:title="@string/pref_literature_genre_title"
+        android:summary="@string/pref_literature_genre_summary"
+        android:defaultValue="KINDERBUCH"
+        android:entries="@array/literatur_genres_anzeigenamen"
+        android:entryValues="@array/literatur_genres_techwerte" />
 
     <!-- Für "Hidden Preference" (die nicht auf Preferences Key angezeigt wird)
          einfach Wert unter einem Key setzen, der hier nicht referenziert wird. -->

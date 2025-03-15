@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="literatur_genres_anzeigenamen">
+        <item>@string/genre_kinderbuch</item>
+        <item>@string/genre_western</item>
+        <item>@string/genre_superhelden</item>
+    </string-array>
+    <string-array name="literatur_genres_techwerte">
+        <item>KINDERBUCH</item>
+        <item>WESTERN</item>
+        <item>SUPERHELDEN</item>
+    </string-array>
+</resources>

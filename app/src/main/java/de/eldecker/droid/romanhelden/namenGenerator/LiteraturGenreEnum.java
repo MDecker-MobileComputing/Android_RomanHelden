@@ -1,8 +1,9 @@
 package de.eldecker.droid.romanhelden.namenGenerator;
 
 
-public enum RomanGenreEnum {
+public enum LiteraturGenreEnum {
 
     KINDERBUCH,
-    CYBERPUNK
+    WESTERN,
+    SUPERHELDEN
 }

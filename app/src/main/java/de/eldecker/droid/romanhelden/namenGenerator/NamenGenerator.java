@@ -1,12 +1,24 @@
 package de.eldecker.droid.romanhelden.namenGenerator;
 
+import android.util.Log;
+
 import java.util.Random;
 
 
 public class NamenGenerator {
 
-    private static final String[] KINDERBUCH_PREFIXES = {"Fluffy", "Tiny", "Happy", "Jumpy", "Sunny", "Snuggle", "Bouncy", "Magic", "Funny", "Twinkle"};
-    private static final String[] KINDERBUCH_SUFFIXES = {"Bunny", "Bear", "Kitty", "Panda", "Frog", "Fairy", "Elf", "Star", "Puppy", "Duck"};
+    private static final String TAG4LOGGING = "NamenGenerator";
+
+    private static final String[] KINDERBUCH_VORNAMEN = {"Fluffy", "Tiny", "Happy", "Jumpy", "Sunny", "Snuggle", "Bouncy", "Magic", "Funny", "Twinkle"};
+    private static final String[] KINDERBUCH_NACHNAMEN = {"Bunny", "Bear", "Kitty", "Panda", "Frog", "Fairy", "Elf", "Star", "Puppy", "Duck"};
+
+    private static final String[] WESTERN_VORNAMEN = {"Dusty", "Buck", "Red", "Johnny", "Lone", "Silver", "Rusty", "Wild", "Bronco", "Colt"};
+    private static final String[] WESTERN_NACHNAME = {"Rider", "Canyon", "Trail", "River", "Stallion", "Wolf", "Hawk", "Deputy", "Ranger", "Outlaw"};
+
+    private static final String[] SUPERHELDEN_VORNAMEN = {"Captain", "Mighty", "Shadow", "Iron", "Thunder", "Crimson", "Silver", "Dark", "Eternal", "Phoenix"};
+    private static final String[] SUPERHELDEN_NACHNAMEN = {"Justice", "Power", "Strike", "Wing", "Force", "Blaze", "Shield", "Flare", "Bolt", "Vision"};
+
+    private static final String[] DUMMY_ARRAY = { "???" };
 
     private static final Random sZufallsGenerator = new Random();
 
@@ -18,10 +30,36 @@ public class NamenGenerator {
         return namenArray[ idx ];
     }
 
-    public static NameRecord erzeugeName() {
+    public static NameRecord erzeugeName( LiteraturGenreEnum genre ) {
 
-        String vorname  = holeRandomString( KINDERBUCH_PREFIXES );
-        String nachname = holeRandomString( KINDERBUCH_SUFFIXES );
+        String[] vornamenArray = null;
+        String[] nachnamenArray = null;
+
+        switch ( genre ) {
+
+            case KINDERBUCH :
+                vornamenArray  = KINDERBUCH_VORNAMEN;
+                nachnamenArray = KINDERBUCH_NACHNAMEN;
+                break;
+
+            case WESTERN:
+                vornamenArray  = WESTERN_VORNAMEN;
+                nachnamenArray = WESTERN_NACHNAME;
+                break;
+
+            case SUPERHELDEN:
+                vornamenArray  = SUPERHELDEN_VORNAMEN;
+                nachnamenArray = SUPERHELDEN_NACHNAMEN;
+                break;
+
+            default:
+                Log.e( TAG4LOGGING, "Unerwartetes Genre: " + genre );
+                vornamenArray  = DUMMY_ARRAY;
+                nachnamenArray = DUMMY_ARRAY;
+        }
+
+        String vorname  = holeRandomString( vornamenArray );
+        String nachname = holeRandomString( nachnamenArray );
 
         return new NameRecord( vorname, nachname );
     }
