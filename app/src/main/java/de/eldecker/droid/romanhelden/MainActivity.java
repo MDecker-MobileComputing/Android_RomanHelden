@@ -149,6 +149,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private void starteAnimation() {
 
+        boolean animationAktiv = _sharedPreferences.getBoolean( "animation_aktiv", false );
+
+        if ( animationAktiv == false ) {
+
+            return;
+        }
+
         Animation tweenAnimation =
                 AnimationUtils.loadAnimation( this,
                                               R.anim.tween_animation );

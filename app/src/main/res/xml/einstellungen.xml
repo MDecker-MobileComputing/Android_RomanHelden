@@ -14,6 +14,12 @@
         android:entries="@array/literatur_genres_anzeigenamen"
         android:entryValues="@array/literatur_genres_techwerte" />
 
+    <SwitchPreferenceCompat
+        android:key="animation_aktiv"
+        android:title="@string/pref_enable_animation_title"
+        android:summary=""
+        android:defaultValue="true" />
+
     <!--
          Es gibt noch die Hidden Preference "namen_zaehler", die programmatisch
          geschrieben und gelesen wird, aber auf dem Preferences-Screen nicht

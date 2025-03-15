@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Innerhalb von 1,5 Sekunden soll die Transparenz von 10% auf 100% erhöht werden -->
     <alpha
         android:fromAlpha="0.1"
         android:toAlpha="1.0"
         android:duration="1500" />
 
+    <!-- Innerhalb von 1,5 Sekunden soll die Größe von 10% auf 100% erhöht werden -->
     <scale
         android:fromXScale="0.1"
         android:toXScale="1.0"
