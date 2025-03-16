@@ -20,6 +20,8 @@ in der offiziellen Android-Doku.
 
 ![Screenshot 1](screenshot_1.png) &nbsp; ![Screenshot 2](screenshot_2.png)
 
+![Screenshot 3](screenshot_3.png)
+
 <br>
 
 ----

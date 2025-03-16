@@ -51,13 +51,14 @@ public class EinstellungenFragment extends PreferenceFragmentCompat
         SeekBarPreference seekBarPreference = findPreference( "schriftgroesse_name" );
         if ( seekBarPreference != null ) {
 
-            seekBarPreference.setSummary ( seekBarPreference.getValue() + "" );
+            String summaryStr = seekBarPreference.getValue() + "sp";
+            seekBarPreference.setSummary( summaryStr );
 
             seekBarPreference.setOnPreferenceChangeListener( new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange( Preference preference, Object neuerWert ) {
 
-                    preference.setSummary( neuerWert + "" );
+                    preference.setSummary( neuerWert + "sp" );
                     return true;
                 }
             });
