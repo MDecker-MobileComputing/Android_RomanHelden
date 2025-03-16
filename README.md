@@ -7,7 +7,8 @@ Die App ist ein einfacher Generator für Namen von Romanfiguren, wobei verschied
 Literaturgenres (z.B. Science Fiction oder Kinderbücher) ausgewählt werden können.
 
 Die App demonstriert die Verwendung eines `PreferenceScreen`, siehe auch 
-[diese Seite](https://developer.android.com/develop/ui/views/components/settings?hl=de#java) in der offiziellen Android-Doku.
+[diese Seite](https://developer.android.com/develop/ui/views/components/settings?hl=de#java) 
+in der offiziellen Android-Doku.
 
 <br>
 
@@ -17,7 +18,7 @@ Die App demonstriert die Verwendung eines `PreferenceScreen`, siehe auch
 
 <br>
 
-![Screenshot 1](screenshot_1.png)
+![Screenshot 1](screenshot_1.png) &nbsp; ![Screenshot 2](screenshot_2.png)
 
 <br>
 

@@ -16,13 +16,19 @@
             android:entries="@array/literatur_genres_anzeigenamen"
             android:entryValues="@array/literatur_genres_techwerte" />
 
+        <CheckBoxPreference
+            android:key="alles_grossbuchstaben"
+            android:title="Namen in Großbuchstaben"
+            android:summary="Aktivieren, um alle Namen in Großbuchstaben zu schreiben"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_kategorie_visuell">
 
         <SwitchPreferenceCompat
             android:key="animation_aktiv"
-            android:title="@string/pref_enable_animation_title"
+            android:title="@string/pref_animation_aktiv"
             android:summary=""
             android:defaultValue="true" />
 
@@ -35,6 +41,7 @@
             android:max="100" />
 
     </PreferenceCategory>
+
     <!--
          Es gibt noch die Hidden Preference "namen_zaehler", die programmatisch
          geschrieben und gelesen wird, aber auf dem Preferences-Screen nicht
