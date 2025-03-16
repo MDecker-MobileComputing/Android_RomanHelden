@@ -9,24 +9,26 @@ public class NamenGenerator {
 
     private static final String TAG4LOGGING = "NamenGenerator";
 
-    private static final String[] KINDERBUCH_VORNAMEN  = { "Fluffy", "Tiny", "Happy", "Jumpy", "Sunny", "Snuggle", "Bouncy", "Magic", "Funny", "Twinkle" };
-    private static final String[] KINDERBUCH_NACHNAMEN = { "Bunny", "Bear", "Kitty", "Panda", "Frog", "Fairy", "Elf", "Star", "Puppy", "Duck" };
+    private static final String[] KINDERBUCH_VORNAMEN  = { "Bouncy", "Fluffy", "Funny", "Happy", "Jumpy", "Magic", "Snuggle", "Sunny", "Tiny", "Twinkle" };
+    private static final String[] KINDERBUCH_NACHNAMEN = { "Bear", "Bunny", "Duck", "Elf", "Fairy", "Frog", "Kitty", "Panda", "Puppy", "Star" };
 
-    private static final String[] WESTERN_VORNAMEN = { "Dusty", "Buck", "Red", "Johnny", "Lone", "Silver", "Rusty", "Wild", "Bronco", "Colt" };
-    private static final String[] WESTERN_NACHNAME = { "Rider", "Canyon", "Trail", "River", "Stallion", "Wolf", "Hawk", "Deputy", "Ranger", "Outlaw" };
+    private static final String[] WESTERN_VORNAMEN = { "Billy", "Bronco", "Buck", "Colt", "Dusty", "Johnny", "Lone", "Red", "Rusty", "Silver", "Wild" };
+    private static final String[] WESTERN_NACHNAME = { "Canyon", "Deputy", "Hawk", "Outlaw", "Ranger", "Rider", "River", "Stallion", "Trail", "Wolf" };
 
-    private static final String[] SUPERHELDEN_VORNAMEN  = { "Captain", "Mighty", "Shadow", "Iron", "Thunder", "Crimson", "Silver", "Dark", "Eternal", "Phoenix" };
-    private static final String[] SUPERHELDEN_NACHNAMEN = { "Justice", "Power", "Strike", "Wing", "Force", "Blaze", "Shield", "Flare", "Bolt", "Vision" };
+    private static final String[] SUPERHELDEN_VORNAMEN  = { "Captain", "Crimson", "Dark", "Eternal", "Iron", "Mighty", "Phoenix", "Shadow", "Silver", "Thunder" };
+    private static final String[] SUPERHELDEN_NACHNAMEN = { "Blaze", "Bolt", "Flare", "Force", "Justice", "Power", "Shield", "Strike", "Vision", "Wing" };
 
-    private static final String[] HISTORISCH_VORNAMEN  = { "Baptiste", "Eleanor", "Theodore", "Harriet", "Walter", "Beatrice", "Arthur", "Catherine", "Edmund", "Matilda", "Henry" };
-    private static final String[] HISTORISCH_NACHNAMEN = { "Pendleton", "Montague", "Hastings", "Whitmore", "Fairchild", "Kingsley", "Barrow", "Lancaster", "Hawthorne", "Winchester" };
+    private static final String[] HISTORISCH_VORNAMEN  = { "Arthur", "Baptiste", "Beatrice", "Catherine", "Eleanor", "Edmund", "Harriet", "Henry", "Matilda", "Theodore", "Walter" };
+    private static final String[] HISTORISCH_NACHNAMEN = { "Barrow", "Fairchild", "Hastings", "Hawthorne", "Kingsley", "Lancaster", "Montague", "Pendleton", "Whitmore", "Winchester" };
 
-    private static final String[] LIEBESROMAN_VORNAMEN = { "Amour", "Bella", "Luna", "Eterna", "Rose", "Felicity", "Serena", "Aurora", "Celeste", "Viola" };
-    private static final String[] LIEBSROMAN_NACHNAMEN = { "Heart", "Love", "Passion", "Bliss", "Euphoria", "Kiss", "Charm", "Desire", "Glow", "Heaven" };
+    private static final String[] LIEBESROMAN_VORNAMEN = { "Amour", "Aurora", "Bella", "Celeste", "Eterna", "Felicity", "Luna", "Rose", "Serena", "Viola" };
+    private static final String[] LIEBSROMAN_NACHNAMEN = { "Bliss", "Charm", "Desire", "Euphoria", "Glow", "Heart", "Heaven", "Kiss", "Love", "Passion" };
 
-    private static final String[] SCIENCEFICTION_VORNAMEN = { "Nova", "Zane", "Orion", "Lyra", "Kai", "Vega", "Axel", "Luna", "Juno", "Kara" };    
-    private static final String[] SCIENCEFICTION_NACHNAMEN = { "Stellar", "Quasar", "Lightyear", "Nebula", "Cosmos", "Eclipse", "Photon", "Astro", "Pulsar", "Vortex", "Zenith" };
+    private static final String[] SCIENCEFICTION_VORNAMEN  = { "Axel", "Juno", "Kai", "Kara", "Luna", "Lyra", "Nova", "Orion", "Vega", "Zane" };
+    private static final String[] SCIENCEFICTION_NACHNAMEN = { "Astro", "Cosmos", "Eclipse", "Lightyear", "Nebula", "Photon", "Pulsar", "Quasar", "Stellar", "Vortex", "Zenith" };
 
+    private static final String[] CYBERPUNK_VORNAMEN  = { "Cipher", "Dray", "Echo", "Kael", "Nova", "Nyx", "Raze", "Riko", "Sable", "Vex" };
+    private static final String[] CYBERPUNK_NACHNAMEN = { "Flux", "Havoc", "Hex", "Onyx", "Ryker", "Sable", "Shard", "Striker", "Vortex", "Zero" };
 
     /** Array für Fehlerfall (wenn Genre nicht erkannt wird). */
     private static final String[] DUMMY_ARRAY = { "???" };
@@ -45,7 +47,7 @@ public class NamenGenerator {
     private static String holeRandomString( String[] namenArray ) {
 
         int anzahl = namenArray.length;
-        int idx = sZufallsGenerator.nextInt( anzahl );
+        int idx    = sZufallsGenerator.nextInt( anzahl );
 
         return namenArray[ idx ];
     }
@@ -65,24 +67,19 @@ public class NamenGenerator {
 
         switch ( genre ) {
 
-            case KINDERBUCH :
-                    vornamenArray  = KINDERBUCH_VORNAMEN;
-                    nachnamenArray = KINDERBUCH_NACHNAMEN;
-                break;
-
-            case WESTERN:
-                    vornamenArray  = WESTERN_VORNAMEN;
-                    nachnamenArray = WESTERN_NACHNAME;
-                break;
-
-            case SUPERHELDEN:
-                    vornamenArray  = SUPERHELDEN_VORNAMEN;
-                    nachnamenArray = SUPERHELDEN_NACHNAMEN;
+            case CYBERPUNK:
+                    vornamenArray  = CYBERPUNK_VORNAMEN;
+                    nachnamenArray = CYBERPUNK_NACHNAMEN;
                 break;
 
             case HISTORISCH:
                     vornamenArray  = HISTORISCH_VORNAMEN;
                     nachnamenArray = HISTORISCH_NACHNAMEN;
+                break;
+
+            case KINDERBUCH :
+                    vornamenArray  = KINDERBUCH_VORNAMEN;
+                    nachnamenArray = KINDERBUCH_NACHNAMEN;
                 break;
 
             case LIEBESROMAN:
@@ -95,13 +92,23 @@ public class NamenGenerator {
                     nachnamenArray = SCIENCEFICTION_NACHNAMEN;
                 break;
 
+            case SUPERHELDEN:
+                    vornamenArray  = SUPERHELDEN_VORNAMEN;
+                    nachnamenArray = SUPERHELDEN_NACHNAMEN;
+                break;
+
+            case WESTERN:
+                    vornamenArray  = WESTERN_VORNAMEN;
+                    nachnamenArray = WESTERN_NACHNAME;
+                break;
+
             default:
                 Log.e( TAG4LOGGING, "Unerwartetes Genre: " + genre );
                 vornamenArray  = DUMMY_ARRAY;
                 nachnamenArray = DUMMY_ARRAY;
         }
 
-        String vorname  = holeRandomString( vornamenArray );
+        String vorname  = holeRandomString( vornamenArray  );
         String nachname = holeRandomString( nachnamenArray );
 
         return new NameRecord( vorname, nachname );

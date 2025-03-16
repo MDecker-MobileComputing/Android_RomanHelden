@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Lifecycle-Methode; wird aufgerufen, wenn Activity neu zur Anzeige gebracht wird.
+     * Aktualisiert bei Bedarf den Untertitel und setzt die Schriftgröße.
      */
     @Override
     protected void onStart() {
@@ -96,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
         LiteraturGenreEnum genreEnum = getGenreAusPreferences();
 
-        String[] techwerteArray = getResources().getStringArray( R.array.literatur_genres_techwerte );
+        String[] techwerteArray =
+                getResources().getStringArray( R.array.literatur_genres_techwerte );
 
         int index = -1;
         for ( int i = 0; i < techwerteArray.length; i++ ) {
@@ -113,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
             return "???";
         }
 
-        String[] anzeigeArray = getResources().getStringArray( R.array.literatur_genres_anzeigenamen );
+        String[] anzeigeArray =
+                getResources().getStringArray( R.array.literatur_genres_anzeigenamen );
         return anzeigeArray[ index ];
     }
 
@@ -125,7 +128,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private LiteraturGenreEnum getGenreAusPreferences() {
 
-        String genreTechWert = _sharedPreferences.getString( "literatur_genre", "KINDERBUCH" );
+        String genreTechWert =
+                _sharedPreferences.getString( "literatur_genre", "KINDERBUCH" );
 
         return LiteraturGenreEnum.valueOf( genreTechWert );
     }
@@ -152,7 +156,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void starteAnimation() {
 
-        boolean animationAktiv = _sharedPreferences.getBoolean( "animation_aktiv", false );
+        boolean animationAktiv =
+                _sharedPreferences.getBoolean( "animation_aktiv", false );
 
         if ( animationAktiv == false ) {
 
@@ -245,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Aktuellen Namen in Zwischenablage kopieren.
+     * Aktuell angezeigten Namen in Zwischenablage kopieren.
      */
     private void kopiereInZwischenablage() {
 
@@ -279,10 +284,9 @@ public class MainActivity extends AppCompatActivity {
         String versionName = BuildConfig.VERSION_NAME;
         int zaehler = _sharedPreferences.getInt( "namen_zaehler", 0 );
 
-        String ueberText =
-                getString( R.string.ueber_text,
-                           zaehler,
-                           versionName );
+        String ueberText = getString( R.string.ueber_text,
+                                      zaehler,
+                                      versionName );
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder( this );
         dialogBuilder.setTitle( R.string.ueber_dialog_titel );

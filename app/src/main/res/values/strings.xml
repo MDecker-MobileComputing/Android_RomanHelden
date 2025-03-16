@@ -5,7 +5,7 @@
     <string name="name_beispiel">Maximilian\nMustermann</string>
 
     <string name="actionbar_neuer_name">Neuer Name</string>
-    <string name="actionbar_clipboard">Ini Zwischenablage kopieren</string>
+    <string name="actionbar_clipboard">In Zwischenablage kopieren</string>
     <string name="actionbar_einstellungen">Einstellungen</string>
     <string name="actionbar_ueber">Über diese App</string>
 
@@ -16,12 +16,13 @@
     <string name="pref_kategorie_visuell">Visuell</string>
     <string name="pref_kategorie_generator">Namensgenerator</string>
 
-    <string name="genre_kinderbuch">Kinderbuch</string>
-    <string name="genre_western">Western</string>
-    <string name="genre_superhelden">Superhelden</string>
+    <string name="genre_cyberpunk">Cyberpunk</string>
     <string name="genre_historisch">Historischer Roman</string>
+    <string name="genre_kinderbuch">Kinderbuch</string>
     <string name="genre_liebesroman">Liebesroman</string>
     <string name="genre_scifi">Science Fiction</string>
+    <string name="genre_superhelden">Superhelden</string>
+    <string name="genre_western">Western</string>
 
     <string name="ueber_dialog_titel">Über diese App</string>
     <string name="ueber_text">Diese App hat bereits %1$d Namen erzeugt.

@@ -17,5 +17,9 @@
  * <pre>
  *     /data/data/de.eldecker.droid.romandhelden/shared_prefs
  * </pre>
+ *
+ * <br>
+ *
+ * API-Doku: https://developer.android.com/reference/androidx/preference/package-summary
  */
 package de.eldecker.droid.romanhelden.einstellungen;

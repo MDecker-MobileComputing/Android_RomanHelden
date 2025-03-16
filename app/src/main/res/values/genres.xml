@@ -2,21 +2,23 @@
 <resources>
 
     <string-array name="literatur_genres_anzeigenamen">
-        <item>@string/genre_kinderbuch</item>
-        <item>@string/genre_western</item>
-        <item>@string/genre_superhelden</item>
+        <item>@string/genre_cyberpunk</item>
         <item>@string/genre_historisch</item>
+        <item>@string/genre_kinderbuch</item>
         <item>@string/genre_liebesroman</item>
         <item>@string/genre_scifi</item>
+        <item>@string/genre_superhelden</item>
+        <item>@string/genre_western</item>
     </string-array>
 
     <string-array name="literatur_genres_techwerte">
-        <item>KINDERBUCH</item>
-        <item>WESTERN</item>
-        <item>SUPERHELDEN</item>
+        <item>CYBERPUNK</item>
         <item>HISTORISCH</item>
+        <item>KINDERBUCH</item>
         <item>LIEBESROMAN</item>
         <item>SCIENCEFICTION</item>
+        <item>SUPERHELDEN</item>
+        <item>WESTERN</item>
     </string-array>
 
 </resources>
