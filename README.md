@@ -26,6 +26,26 @@ in der offiziellen Android-Doku.
 
 ----
 
+## Beispiel für Datei mit Shared Preferences ##
+
+<br>
+
+Die Einstellungen werden in einer Datei mit Namen `de.eldecker.droid.romanhelden_preferences.xml` im Ordner `/data/data/de.eldecker.droid.romanhelden` gespeichert (`de.eldecker.droid.romanhelden` ist die Package-ID dieser App, siehe Wert von Attribut `android.defaultConfig.applicationId` in Datei `app/build.gradle`).
+
+Beispiel für den Inhalt dieser Datei:
+```
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <int name="schriftgroesse_name" value="67" />
+    <string name="literatur_genre">KINDERBUCH</string>
+    <boolean name="alles_grossbuchstaben" value="false" />
+    <boolean name="animation_aktiv" value="false" />
+    <int name="namen_zaehler" value="41" />
+</map>
+```
+
+----
+
 ## License ##
 
 <br>
