@@ -4,7 +4,9 @@ import android.util.Log;
 
 import java.util.Random;
 
-
+/**
+ * Klasse mit Namensgenerator für verschiedene Literatur-Genres.
+ */
 public class NamenGenerator {
 
     private static final String TAG4LOGGING = "NamenGenerator";

@@ -13,6 +13,16 @@ Die App demonstriert die Verwendung eines `PreferenceScreen`, siehe auch
 
 ----
 
+## Screenshots ##
+
+<br>
+
+![Screenshot 1](screenshot_1.png)
+
+<br>
+
+----
+
 ## License ##
 
 <br>
