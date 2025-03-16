@@ -30,7 +30,8 @@ in der offiziellen Android-Doku.
 
 <br>
 
-Die Einstellungen werden in einer Datei mit Namen `de.eldecker.droid.romanhelden_preferences.xml` im Ordner `/data/data/de.eldecker.droid.romanhelden` gespeichert (`de.eldecker.droid.romanhelden` ist die Package-ID dieser App, siehe Wert von Attribut `android.defaultConfig.applicationId` in Datei `app/build.gradle`).
+Die Einstellungen werden in einer Datei mit Namen `de.eldecker.droid.romanhelden_preferences.xml` im Ordner `/data/data/de.eldecker.droid.romanhelden/shared_prefs` 
+gespeichert (`de.eldecker.droid.romanhelden` ist die Package-ID dieser App, siehe Wert von Attribut `android.defaultConfig.applicationId` in Datei `app/build.gradle`).
 
 Beispiel für den Inhalt dieser Datei:
 ```
