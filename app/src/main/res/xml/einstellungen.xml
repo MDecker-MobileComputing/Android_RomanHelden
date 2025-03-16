@@ -43,10 +43,10 @@
 
     <PreferenceCategory android:title="@string/pref_kategorie_sonstiges">
 
-    <Preference
-        android:key="reset_zaehler"
-        android:title="@string/pref_zaehler_reset"
-        android:summary="@string/pref_zaehler_reset_summary" />
+        <Preference
+            android:key="reset_zaehler"
+            android:title="@string/pref_zaehler_reset"
+            android:summary="@string/pref_zaehler_reset_summary" />
 
     </PreferenceCategory>
 
