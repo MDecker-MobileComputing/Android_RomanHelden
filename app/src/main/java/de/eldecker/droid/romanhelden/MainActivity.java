@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Gibt Anzeigename für aktuell gewähltes Genre laut Preferences
+     * Gibt Anzeigename für aktuell gewähltes Genre laut Preferences zurück.
      *
      * @return Anzeigename Literaturgenre, z.B. "Western"
      */
