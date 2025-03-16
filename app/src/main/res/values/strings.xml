@@ -14,9 +14,12 @@
     <string name="pref_animation_aktiv">Animationen</string>
     <string name="pref_alles_grossbuchstaben">Namen in Großbuchstaben</string>
     <string name="pref_alles_grossbuchstaben_summary">Vor- und Nachnamen nur mit Großbuchstaben</string>
+    <string name="pref_zaehler_reset">Zähler zurücksetzen</string>
+    <string name="pref_zaehler_reset_summary">Zähler für Gesamtzahl der erzeugten Namen auf 0 zurücksetzen</string>
 
+    <string name="pref_kategorie_allgemein">Allgemein</string>
     <string name="pref_kategorie_visuell">Visuell</string>
-    <string name="pref_kategorie_generator">Namensgenerator</string>
+    <string name="pref_kategorie_sonstiges">Sonstiges</string>
 
     <string name="genre_cyberpunk">Cyberpunk</string>
     <string name="genre_historisch">Historischer Roman</string>
@@ -26,14 +29,23 @@
     <string name="genre_superhelden">Superhelden</string>
     <string name="genre_western">Western</string>
 
+    <string name="zaehler_reset_confirm_titel">Sicherheitsfrage</string>
+    <string name="zaehler_reset_confirm_text">Möchten Sie den Zähler für die Gesamtanzahl der erzeugten
+        Namen wirklich auf 0 zurücksetzen?
+    </string>
+    <string name="button_ja">Ja</string>
+    <string name="button_nein">Nein</string>
+
     <string name="ueber_dialog_titel">Über diese App</string>
     <string name="ueber_text">Diese App hat bereits %1$d Namen erzeugt.
         \n\nVersion %2$s
     </string>
     <string name="ueber_dialog_button">Zur Kenntnis genommen</string>
 
-    <string name="toast_zwischenablage_fehler">Kann nicht auf Zwischenablage zugreifen</string>
     <string name="clipboard_label">Name Romanfigur</string>
+
+    <string name="toast_zwischenablage_fehler">Kann nicht auf Zwischenablage zugreifen</string>
+    <string name="toast_zaehler_reset_erfolg">Zähler der erzeugten Namen wurde auf 0 zurückgesetzt.</string>
 
     <string name="actionbar_subtitel_genre">Genre: %1s</string>
 
