@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
         String name = _nameRecord.toString();
 
         String clipboardLabel = getString( R.string.clipboard_label );
-        ClipData clip = ClipData.newPlainText(clipboardLabel, name );
+        ClipData clip = ClipData.newPlainText( clipboardLabel, name );
 
         clipboard.setPrimaryClip( clip );
     }
