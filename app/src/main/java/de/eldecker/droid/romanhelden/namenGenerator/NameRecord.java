@@ -14,24 +14,40 @@ public record NameRecord( String vorname,
                           String nachname ) {
 
     /**
-     * Liefert ganzen Namen als String, mit Zeilenumbrüche.
+     * Liefert ganzen Namen als String, mit Zeilenumbruch,
+     * Groß-/Kleinschreibung normal.
      *
-     * @return Vor- und Nachname mit einer neuen Zeile dazwischen
+     * @return Vor- und Nachname mit Newline dazwischen
+     */
+    public String toStringNormal() {
+
+        return vorname() + "\n" + nachname();
+    }
+
+
+    /**
+     * Wie {@link #toStringNormal()}, aber nur Großbuchstaben.
+     *
+     * @return Vor- und Nachname ganz in Großbuchstaben, mit
+     *         Newline dazwischen
+     */
+    public String toStringNurGrossbuchstaben() {
+
+        return vorname().toUpperCase() + "\n" + nachname().toUpperCase();
+    }
+
+
+    /**
+     * Liefert ganzen Namen als String, ohne Newline; z.B. um in
+     * Zwischenablage zu kopieren.
+     *
+     * @return Vor- und Nachname als ein String ohne neue Zeile
      */
     @NonNull
     @Override
     public String toString() {
 
-        return vorname() + "\n" + nachname();
-    }
-
-    /**
-     * Liefert ganzen Namen als String, ohne Zeilenumbrüche.
-     *
-     * @return Vor- und Nachname als ein String ohne neue Zeile
-     */
-    public String fuerZwischenablage() {
-
         return vorname() + " " + nachname();
     }
+
 }

@@ -7,7 +7,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -140,10 +139,23 @@ public class MainActivity extends AppCompatActivity {
      */
     private void neuerName() {
 
+        boolean allesGrossbuchstaben =
+                _sharedPreferences.getBoolean( "alles_grossbuchstaben", false );
+
         LiteraturGenreEnum genreEnum = getGenreAusPreferences();
 
         _nameRecord = erzeugeName( genreEnum );
-        String name = _nameRecord.toString();
+
+        String name = "";
+        if ( allesGrossbuchstaben ) {
+
+            name = _nameRecord.toStringNurGrossbuchstaben();
+
+        } else {
+
+            name = _nameRecord.toStringNormal();
+        }
+
         _nameTextView.setText( name );
         starteAnimation();
 
@@ -266,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        String name = _nameRecord.fuerZwischenablage();
+        String name = _nameRecord.toString();
 
         String clipboardLabel = getString( R.string.clipboard_label );
         ClipData clip = ClipData.newPlainText(clipboardLabel, name );

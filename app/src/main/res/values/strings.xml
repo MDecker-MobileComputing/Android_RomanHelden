@@ -12,6 +12,8 @@
     <string name="pref_literature_genre_title">Literatur-Genre</string>
     <string name="pref_literature_genre_summary">Genre für das Namen erzeugt werden sollen</string>
     <string name="pref_animation_aktiv">Animationen</string>
+    <string name="pref_alles_grossbuchstaben">Namen in Großbuchstaben</string>
+    <string name="pref_alles_grossbuchstaben_summary">Vor- und Nachnamen nur mit Großbuchstaben</string>
 
     <string name="pref_kategorie_visuell">Visuell</string>
     <string name="pref_kategorie_generator">Namensgenerator</string>

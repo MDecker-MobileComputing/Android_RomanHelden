@@ -11,15 +11,14 @@
         <ListPreference
             android:key="literatur_genre"
             android:title="@string/pref_literature_genre_title"
-            android:summary="@string/pref_literature_genre_summary"
             android:defaultValue="KINDERBUCH"
             android:entries="@array/literatur_genres_anzeigenamen"
             android:entryValues="@array/literatur_genres_techwerte" />
 
         <CheckBoxPreference
             android:key="alles_grossbuchstaben"
-            android:title="Namen in Großbuchstaben"
-            android:summary="Aktivieren, um alle Namen in Großbuchstaben zu schreiben"
+            android:title="@string/pref_alles_grossbuchstaben"
+            android:summary="@string/pref_alles_grossbuchstaben_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>
