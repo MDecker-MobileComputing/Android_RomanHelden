@@ -139,12 +139,11 @@ public class MainActivity extends AppCompatActivity {
      */
     private void neuerName() {
 
+        LiteraturGenreEnum genreEnum = getGenreAusPreferences();
+        _nameRecord = erzeugeName( genreEnum );
+
         boolean allesGrossbuchstaben =
                 _sharedPreferences.getBoolean( "alles_grossbuchstaben", false );
-
-        LiteraturGenreEnum genreEnum = getGenreAusPreferences();
-
-        _nameRecord = erzeugeName( genreEnum );
 
         String name = "";
         if ( allesGrossbuchstaben ) {
