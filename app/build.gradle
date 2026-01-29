@@ -4,7 +4,9 @@ plugins {
 
 android {
     namespace 'de.eldecker.droid.romanhelden'
-    compileSdk 35
+    compileSdk {
+        version = release(36)
+    }
 
     // damit über Klasse BuildConfig auf versionCode und VersionName zugegriffen werden kann;
     // danach einen Rebuild ausführen.
@@ -12,8 +14,8 @@ android {
 
     defaultConfig {
         applicationId "de.eldecker.droid.romanhelden"
-        minSdk 26
-        targetSdk 35
+        minSdk 24
+        targetSdk 36
         versionCode 1
         versionName "1.0"
 
@@ -33,7 +35,6 @@ android {
 }
 
 dependencies {
-
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
@@ -43,5 +44,5 @@ dependencies {
     androidTestImplementation libs.espresso.core
 
     // Abhängigkeit für PreferencesScreen
-    implementation libs.preference.ktx
+    implementation 'androidx.preference:preference:1.2.1'
 }
